@@ -1,0 +1,20 @@
+Add-Type -TypeDefinition $mytype -OutputAssembly IgnorantTranscriber.exe
+.\IgnorantTranscriber.exe
+Disable-PSTranscription 
+
+
+start trancription 
+Start-Transcript -OutputDirectory C:\temp\Transcripts -IncludeInvocationheader
+
+Get-Process -Name Power*
+Get-Service m*
+
+$transcript = Stop-Transcript 
+
+
+
+Initial ingress: this occurs when a privileged user account is compromised. In our example, it is a result of a successful Remote Desktop Protocol (RDP) brute force attack.
+error codes initial ingress
+monitoring occurrences of Event ID 4625 (An account failed to log on) with the status code of 0xc000006d (The attempted logon is invalid)
+the sub-status code of 0xc0000064 (The specified account does not exist) followed by the same event with the status code of 0xc000006a (Wrong password)
+successful logon (Event ID 4624) of type 3 (Network) and type 10 (Remote Interactive

@@ -1,0 +1,3 @@
+query session /server:rds-host-01
+
+logoff 22 /server:rds-host-01 /v
