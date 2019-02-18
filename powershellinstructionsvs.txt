@@ -1,0 +1,62 @@
+source: https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps
+
+AD connect sync
+open it up and run it 
+
+open up a powershell 
+run full sync 
+
+then go back to admin center
+on home page will show status of successful sync
+open windows server and see successful sync
+
+need to execute it running full AD sync 
+
+Powershell
+get full list of account on server
+Get-Mailbox -Identity (username no quotes)
+Get-Mailbox -Identity (username no quotes) | FL
+
+to remote into exchange online server 
+$UserCredential = Get-Credential
+
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication  Basic -AllowRedirection
+
+Import-PSSession $Session
+
+to remove session
+Remove-PSSession $Session
+
+Azure AD Connect (AAD Connect) February 2016 Build (1.1.105.0) Onwards
+In February 2016 build 1.1.105.0 of Azure AD Connect was released which introduced multiple new features.  The scheduler is now built into the sync engine.  This means that there is no longer a separate DirectorySyncClientCmd tool.
+
+To initiate a Delta Sync, open Windows PowerShell and run:
+
+Start-ADSyncSyncCycle -PolicyType Delta
+
+force sync
+
+Start-ADSyncSyncCycle -PolicyType Initial
+
+Set-Mailbox -Identity [user id here] -HiddenFromAddressListsEnabled $true
+ To initiate a Full Sync, open Windows PowerShell and run:
+
+Start-ADSyncSyncCycle -PolicyType Initial
+
+Pierre added a comment indicating that if the commands are not visible, try to load up the PowerShell module:
+
+Import-Module "C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1"
+
+N, Y, N, Y 
+
+Highway12!-new user pw
+
+
+
+
+5 majors
+chf - congestive heart failure- blood pressure, body weight 
+chronic obstructive pulmonary- meausre of oxygen level within blood system  
+diabetes- glucometer 
+Urinary tract infection - bathroom sensors 
+pneumonia- open 

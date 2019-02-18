@@ -1,0 +1,39 @@
+Installing tensorflow
+First, create a project directory called tf-demo:
+$ mkdir ~/tf-demo
+Navigate to your newly created tf-demo directory:
+$ cd ~/tf-demo
+Then create a new virtual environment called tensorflow-dev. Run the following command to create the environment:
+$ sudo apt-get install python3 venv
+
+$ python3 -m venv tensorflow-dev
+This creates a new tensorflow-dev directory which will contain all of the packages that you install while this environment is activated. It also includes pip and a standalone version of Python.
+
+Now activate your virtual environment:
+
+$ source tensorflow-dev/bin/activate
+
+Once activated, you will see something similar to this in your terminal:
+
+(tensorflow-dev)username@hostname:~/tf-demo $
+Now you can install TensorFlow in your virtual environment.
+
+Run the following command to install and upgrade to the newest version of TensorFlow available in PyPi:
+
+(tensorflow-dev) $ pip3 install --upgrade tensorflow
+
+TensorFlow will install:
+Output
+Collecting tensorflow
+  Downloading tensorflow-1.4.0-cp36-cp36m-macosx_10_11_x86_64.whl (39.3MB)
+    100% |████████████████████████████████| 39.3MB 35kB/s
+
+...
+
+Successfully installed bleach-1.5.0 enum34-1.1.6 html5lib-0.9999999 markdown-2.6.9 numpy-1.13.3 protobuf-3.5.0.post1 setuptools-38.2.3 six-1.11.0 tensorflow-1.4.0 tensorflow-tensorboard-0.4.0rc3 werkzeug-0.12.2 wheel-0.30.0
+
+If you'd like to deactivate your virtual environment at any time, the command is:
+
+deactivate
+To reactivate the environment later, navigate to your project directory and run source tensorflow-dev/bin/activate.
+

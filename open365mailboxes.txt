@@ -1,0 +1,9 @@
+Connect-EXOPSSession -UserPrincipalName chris@contoso.com
+
+
+
+ Add-MailboxPermission -AccessRights "FullAccess" -Identity <MailboxIdParameter> -user epicenter@keystonecare.com -AutoMapping $false
+
+ -example-  Add-MailboxPermission -AccessRights "FullAccess" -Identity cedney -user epicenter@keystonecare.com -AutoMapping $false ###END CMDLET
+
+Get-PSSession | Remove-PSSession
